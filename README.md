@@ -1,6 +1,18 @@
-# Projet GameOn
-1. Forkez ce repo ;
-2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ;
-3. Il n'y a aucune dépendance ;
-4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
+# GameOn-website-FR
+Code du projet 4 de développeur front-end V2
 
+
+#5 Tests manuels **Validé ok** :heavy_check_mark:
+
+#4 Ajouter confirmation quand envoie réussi **Validé ok** :heavy_check_mark:
+
+#3  Ajouter validation ou messages d'erreur **Validé ok** :heavy_check_mark:
+
+#2  Implémenter entrées du formulaire **Validé ok** :heavy_check_mark:
+
+#1 TODO : fermer la modale **Validé ok** :heavy_check_mark:
+
+
+Lien de dépôt code : https://github.com/vianey-jean/GameOn-website-FR/tree/dev
+
+Lien pages : https://vianey-jean.github.io/GameOn-website-FR/
