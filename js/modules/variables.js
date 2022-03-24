@@ -1,25 +1,22 @@
-//Pour le selection du Modal
-
 // --------------------------------------------------------------------------------------------------------------- //
-// -------------------------------------------- DECLARATIONS VARIABLES ------------------------------------------- //
+// -------------------------------------------- DÉCLARATIONS VARIABLES ------------------------------------------- //
 // --------------------------------------------------------------------------------------------------------------- //
-// ------------------ Ce javascript contient toutes les variables utilisées dans d'autres fichiers javascripts-------------------- //
+// ------------------ Ce javascript contient toutes les variables utilisées dans d'autres fichiers javascripts -------------------- //
 
-// ------------------------------------------------- DOM ELEMENTS ------------------------------------------------ //
+// ------------------------------------------------- ÉLÉMENTS DOM ------------------------------------------------ //
 
-const modal_Backgroud = document.querySelector(".bground"); // Constant pour le modal background
-const modal_Btn = document.querySelectorAll(".modal-btn"); // Constant pour <button> "Je m'inscris"
-const form_Data = document.querySelectorAll(".form_Data"); // Constant pour le modal Data
-const form_DataConditions = form_Data[6]; // Variable pour element <div form-data> qui contient des cases à cocher
-const span_Close = document.querySelectorAll(".close"); // Constant pour le <span> croix qui ferme le modal
-const form = document.querySelector("form"); // Constant pour le <form>
-const modal_Body = document.querySelector(".modal-body"); // Constant pour le contenar parent <form> & <div> "message thanks"
-const textThanks = document.querySelector(".text-thanks"); // Constant pour le conteneur <div> avec "message merci" après un formulaire de validation réussi
-const topNav = document.getElementById("myTopnav"); // Constant pour l'élément <header> contenant nav
-const navIcon = document.querySelector(".icon"); // Constant pour l'élément <a> contenant l'icône Hamburger pour la navigation
-
-// ---------------------------------------------------- SELECT--------------------------------------------------- //
-// -------------------------- Variables pour chaque élément contenu dans la Nodelist Select ------------------------- //
+const modal_Backgroud = document.querySelector(".bground"); // Const pour le fond modal
+const modal_Btn = document.querySelectorAll(".modal-btn"); // Const pour <bouton> "Je m'inscris"
+const form_Data = document.querySelectorAll(".form_Data"); // Const pour les données modales
+const form_DataConditions = form_Data[6]; // Variable pour l'élément <div form-data> qui contient des cases à cocher
+const span_Close = document.querySelectorAll(".close"); // Const pour <span> croix qui ferme modal
+const form = document.querySelector("form"); // Const pour <formulaire>
+const modal_Body = document.querySelector(".modal-body"); // Const pour le conteneur parent de <form> & <div> "message thanks"
+const textThanks = document.querySelector(".text-thanks"); // Const pour le conteneur <div> avec "message merci" après un formulaire de validation réussi
+const topNav = document.getElementById("myTopnav"); // Const pour l'élément <header> contenant nav
+const navIcon = document.querySelector(".icon"); // Const pour l'élément <a> contenant l'icône Hamburger pour la navigation
+// ---------------------------------------------------- INPUTS --------------------------------------------------- //
+// -------------------------- Variables pour chaque élément contenu dans la Nodelist  ------------------------- //
 
 const select_Prenom = document.querySelector("#first");
 const select_Nom = document.querySelector("#last");
@@ -28,8 +25,8 @@ const select_Anniv = document.querySelector("#birthdate");
 const select_Num = document.querySelector("#quantity");
 const select_Radio = document.getElementsByName("#location");
 
-// -------------------------------------------------- ERROR-DATA ------------------------------------------------- //
-// ------------------- Variables pour chaque élément contenu dans la classe Nodelist "error-data"------------------- //
+// -------------------------------------------------- ERREUR-DONNEES ------------------------------------------------- //
+// ------------------- Variables pour chaque élément contenu dans la classe Nodelist "error-data" ------------------- //
 
 const infos_Erreur_Prenom = document.querySelector(".error-data_first");
 const infos_Erreur_Nom = document.querySelector(".error-data_last");
@@ -39,31 +36,82 @@ const infos_Erreur_Num = document.querySelector(".error-data_quantity");
 const infos_Erreur_Localise = document.querySelector(".error-data_location");
 const infos_Erreur_Conditions = document.querySelector(".error-data_checkbox");
 
+// ---------------------------------------------------- TOPNAV --------------------------------------------------- //
+// ------------------------- Variables pour chaque élément <span> contenu dans le <topnav> ------------------------- //
 
-export{
-modal_Backgroud,
-modal_Btn,
-form_Data,
-form_DataConditions,
-span_Close,
-form,
-modal_Body,
-textThanks,
-topNav,
-navIcon,
-select_Prenom,
-select_Nom,
-select_Mail,
-select_Anniv,
-select_Num,
-select_Radio,
-infos_Erreur_Prenom,
-infos_Erreur_Nom,
-infos_Erreur_Mail,
-infos_Erreur_Anniv,
-infos_Erreur_Num,
-infos_Erreur_Localise,
-infos_Erreur_Conditions,
+const spanDetails = document.querySelector("#navbar-details");
+const spanPropos = document.querySelector("#navbar-propos");
+const spanContact = document.querySelector("#navbar-contact");
+const spanEvents = document.querySelector("#navbar-events");
 
-    
-}
+
+// -------------------------------------------------- STYLE CSS -------------------------------------------------- //
+// --------------------------- Variables pour le style CSS affichées dans <div error-data> ----------------------------- //
+
+let couleur_Font_Erreur = "#ff0000";
+let couleur_Font_Valide = "green";
+let couleur_Bordure_Erreur = "2.8px solid #ff0000";
+let couleur_Bordure_Valide = "2.8px solid green";
+let couleur_Bordure_Initiale = "1px solid #ccc";
+
+// -------------------------------------------------- DATE NOW --------------------------------------------------- //
+// -------------------------- Variables pour collecter la date actuelle (jour, mois et année) ---------------------------- //
+
+let today = new Date();
+let dayToday = today.getDate();
+let monthToday = today.getMonth();
+let yearToday = today.getFullYear();
+
+// ---------------------------------------------------- REGEX ---------------------------------------------------- //
+// -------------------------------- Regex pour les entrées [type=text/email/date/number] ------------------------------- //
+
+const regexNames =
+  /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ,\'\.\s-]{2,50}$/g;
+const regexEmail =
+  /^([\w/\_\\!#$%&£'\]\[*+=?^`{|}~"()\.,:;<>@-]{1,}[\@][a-zA-Z]{1,}[\.][a-zA-Z]{2,})$/;
+const regexBirthdate =
+  /^(19[0-9][0-9]|2[0-1][0-9][0-9])\-(0[1-9]|1[0-2])\-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+const regexNumbers = /^([0-9]|[0-9][0-9])$/;
+
+export {
+  modal_Backgroud,
+  modal_Btn,
+  form_Data,
+  form_DataConditions,
+  span_Close,
+  form,
+  modal_Body,
+  textThanks,
+  select_Prenom,
+  select_Nom,
+  select_Mail,
+  select_Anniv,
+  select_Num,
+  select_Radio,
+  infos_Erreur_Prenom,
+  infos_Erreur_Nom,
+  infos_Erreur_Mail,
+  infos_Erreur_Anniv,
+  infos_Erreur_Num,
+  infos_Erreur_Localise,
+  infos_Erreur_Conditions,
+  spanDetails,
+  spanPropos,
+  spanContact,
+  spanEvents,
+  couleur_Font_Valide,
+  couleur_Font_Erreur,
+  couleur_Bordure_Erreur,
+  couleur_Bordure_Valide,
+  couleur_Bordure_Initiale,
+  today,
+  dayToday,
+  monthToday,
+  yearToday,
+  regexNames,
+  regexEmail,
+  regexBirthdate,
+  regexNumbers,
+  navIcon,
+  topNav,
+};
