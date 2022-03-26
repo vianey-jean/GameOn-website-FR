@@ -205,6 +205,7 @@ vars.form.addEventListener("submit", (event) => {
     vars.form.style.display = "none";
     // Le formulaire est valide => un "message de remerciement" s'affiche
     vars.textThanks.style.display = "block";
+    vars.textThanks.innerHTML = vars.msg_Valide;
     // Le formulaire est valide => un bouton de fermeture s'affiche pour fermer le modal
     const buttonClose = document.querySelectorAll(".btn-close");
     // Le bouton de fermeture appelle la fonction closeModal au clic
