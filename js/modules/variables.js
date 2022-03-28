@@ -61,7 +61,7 @@ let msg_Erreur_Conditions = "* Veuillez accepter les conditions d'utilisation";
 // --------------------------- Variables pour le style CSS affichées dans <div error-data> ----------------------------- //
 
 let couleur_Bordure_Initiale = "1px solid #ccc";
-let icon_Valide = '<p  id="ok" class="fa fa-check "> Valide</p>';
+let icon_Valide = '<p  id="val" class="fa fa-check "> Valide</p>';
 
 // ------------------------------------------------- INNER HTML -------------------------------------------------- //
 // ------------------- Variables pour innerHTML affichées pour le message de remerciement après l'envoi --------------------- //
@@ -80,12 +80,9 @@ let yearToday = today.getFullYear();
 // ---------------------------------------------------- REGEX ---------------------------------------------------- //
 // -------------------------------- Regex pour les entrées [type=text/email/date/number] ------------------------------- //
 
-const regexNames =
-  /^[a-zA-ZÀ-ú\-\s]*/g;
-const regexEmail =
-  /^([\w/\_\\!#$%&£'\]\[*+=?^`{|}~"()\.,:;<>@-]{1,}[\@][a-zA-Z]{1,}[\.][a-zA-Z]{2,})$/;
-const regexBirthdate =
-  /^(19[0-9][0-9]|2[0-1][0-9][0-9])\-(0[1-9]|1[0-2])\-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+const regexNames = /^[a-zA-ZÀ-ú\-\s]*/g;
+const regexEmail = /^([\w/\_\\!#$%&£'\]\[*+=?^`{|}~"()\.,:;<>@-]{1,}[\@][a-zA-Z]{1,}[\.][a-zA-Z]{2,})$/;
+const regexBirthdate = /^(19[0-9][0-9]|2[0-1][0-9][0-9])\-(0[1-9]|1[0-2])\-(0[1-9]|[1-2][0-9]|3[0-1])$/;
 const regexNumbers = /^([0-9]|[0-9][0-9])$/;
 
 export {

@@ -32,11 +32,7 @@ img {
 /* ---------------------- HEADER */
 /* ------------------------------*/
 
-#ok{
-  font-size:12px;
-  font-style: solid;
-  color: green;
-}
+
 
 .topnav {
   margin: 3.5%;
@@ -201,6 +197,12 @@ input::placeholder {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+
+#val{
+  font-size:12px;
+  font-style: solid;
+  color: green;
 }
 /* Class for data-error messages */
 .error-data_first, 
