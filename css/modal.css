@@ -32,6 +32,12 @@ img {
 /* ---------------------- HEADER */
 /* ------------------------------*/
 
+#ok{
+  font-size:12px;
+  font-style: solid;
+  color: green;
+}
+
 .topnav {
   margin: 3.5%;
   display: flex;

@@ -60,12 +60,8 @@ let msg_Erreur_Conditions = "* Veuillez accepter les conditions d'utilisation";
 // -------------------------------------------------- STYLE CSS -------------------------------------------------- //
 // --------------------------- Variables pour le style CSS affichées dans <div error-data> ----------------------------- //
 
-let couleur_Font_Erreur = "#ff0000";
-let couleur_Font_Valide = "green";
-let couleur_Bordure_Erreur = "2.8px solid #ff0000";
-let couleur_Bordure_Valide = "2.8px solid green";
 let couleur_Bordure_Initiale = "1px solid #ccc";
-let icon_Valide = '<i class="fa fa-check "></i>  ok ';
+let icon_Valide = '<p  id="ok" class="fa fa-check "> Valide</p>';
 
 // ------------------------------------------------- INNER HTML -------------------------------------------------- //
 // ------------------- Variables pour innerHTML affichées pour le message de remerciement après l'envoi --------------------- //
@@ -85,7 +81,7 @@ let yearToday = today.getFullYear();
 // -------------------------------- Regex pour les entrées [type=text/email/date/number] ------------------------------- //
 
 const regexNames =
-  /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ,\'\.\s-]{2,50}$/g;
+  /^[a-zA-ZÀ-ú\-\s]*/g;
 const regexEmail =
   /^([\w/\_\\!#$%&£'\]\[*+=?^`{|}~"()\.,:;<>@-]{1,}[\@][a-zA-Z]{1,}[\.][a-zA-Z]{2,})$/;
 const regexBirthdate =
@@ -124,10 +120,6 @@ export {
   msg_Erreur_Num,
   msg_Erreur_Localise,
   msg_Erreur_Conditions,
-  couleur_Font_Valide,
-  couleur_Font_Erreur,
-  couleur_Bordure_Erreur,
-  couleur_Bordure_Valide,
   couleur_Bordure_Initiale,
   icon_Valide,
   msg_Valide,

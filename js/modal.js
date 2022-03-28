@@ -56,22 +56,22 @@ vars.span_Close.forEach((span) => span.addEventListener("click", closeModal));
 events.eventInputNames(
   vars.select_Prenom,
   vars.infos_Erreur_Prenom,
-  "input",
-  vars.couleur_Bordure_Valide
+  "input"
+  //vars.couleur_Bordure_Valide
 );
 // Fonction de lancement pour PRENOM sur l'événement "FOCUSIN"
 events.eventInputNames(
   vars.select_Prenom,
   vars.infos_Erreur_Prenom,
-  "focusin",
-  vars.couleur_Bordure_Valide
+  "focusin"
+  //vars.couleur_Bordure_Valide
 );
 // Fonction de lancement pour PRENOM sur l'événement "FOCUSOUT"
 events.eventInputNames(
   vars.select_Prenom,
   vars.infos_Erreur_Prenom,
-  "focusout",
-  vars.couleur_Bordure_Initiale
+  "focusout"
+  //vars.couleur_Bordure_Initiale
 );
 
 //---------------------------------------------------------------------------
@@ -81,56 +81,55 @@ events.eventInputNames(
 events.eventInputNames(
   vars.select_Nom,
   vars.infos_Erreur_Nom,
-  "input",
-  vars.couleur_Bordure_Valide
+  "input"
+  //vars.couleur_Bordure_Valide
 );
 // Fonction de lancement pour NOM sur l'événement "FOCUSIN"
 events.eventInputNames(
   vars.select_Nom,
   vars.infos_Erreur_Nom,
-  "focusin",
-  vars.couleur_Bordure_Valide
+  "focusin"
+  //vars.couleur_Bordure_Valide
 );
 // Fonction de lancement pour NOM sur l'événement "FOCUSOUT"
 events.eventInputNames(
   vars.select_Nom,
   vars.infos_Erreur_Nom,
   "focusout",
-  vars.couleur_Bordure_Initiale
+  //vars.couleur_Bordure_Initiale
 );
 
 //---------------------------------------------------------------------------
 // ENTRÉE E-MAIL FOCUSING
 //---------------------------------------------------------------------------
 // Lancer la fonction pour EMAIL sur l'événement "INPUT"
-events.eventselect_Mail(vars.select_Mail, "input", vars.couleur_Bordure_Valide);
+events.eventselect_Mail(vars.select_Mail, "input");
 // Fonction de lancement pour EMAIL sur l'événement "FOCUSIN"
-events.eventselect_Mail(vars.select_Mail, "focusin", vars.couleur_Bordure_Valide);
+events.eventselect_Mail(vars.select_Mail, "focusin");
 // Fonction de lancement pour EMAIL sur l'événement "FOCUSOUT"
-events.eventselect_Mail(vars.select_Mail, "focusout", vars.couleur_Bordure_Initiale);
+events.eventselect_Mail(vars.select_Mail, "focusout");
 
 //---------------------------------------------------------------------------
 // INPUT BIRTHDATE FOCUSING
 //---------------------------------------------------------------------------
 // Lancer la fonction pour BIRTHDATE sur l'événement "INPUT
-events.eventselect_Anniv("input", vars.couleur_Bordure_Valide);
+events.eventselect_Anniv("input");
 // Fonction de lancement pour BIRTHDATE sur l'événement "FOCUSIN"
-events.eventselect_Anniv("focusin", vars.couleur_Bordure_Valide);
+events.eventselect_Anniv("focusin");
 // Fonction de lancement pour BIRTHDATE sur l'événement "FOCUSOUT"
-events.eventselect_Anniv("focusout", vars.couleur_Bordure_Initiale);
+events.eventselect_Anniv("focusout");
 
 //---------------------------------------------------------------------------
 // MISE AU POINT SUR LE NUMÉRO D'ENTRÉE
 //---------------------------------------------------------------------------
 // Lancer la fonction pour les NUMBERS sur l'événement "INPUT"
-events.eventInputQuantity(vars.select_Num, "input", vars.couleur_Bordure_Valide);
+events.eventInputQuantity(vars.select_Num, "input");
 // Fonction de lancement pour NUMBERS sur l'événement "FOCUSIN"
-events.eventInputQuantity(vars.select_Num, "focusin", vars.couleur_Bordure_Valide);
+events.eventInputQuantity(vars.select_Num, "focusin");
 // Lancer la fonction pour NUMBERS sur l'événement "FOCUSOUT"
 events.eventInputQuantity(
   vars.select_Num,
-  "focusout",
-  vars.couleur_Bordure_Initiale
+  "focusout"
 );
 
 //---------------------------------------------------------------------------
@@ -154,21 +153,19 @@ vars.form.addEventListener("submit", (event) => {
   // Fonction d'appel pour l'entrée PRENOM
   valid.validateInputNames(
     vars.select_Prenom,
-    vars.infos_Erreur_Prenom,
-    vars.couleur_Bordure_Initiale
+    vars.infos_Erreur_Prenom
   );
   // Fonction d'appel pour l'entrée Nom
   valid.validateInputNames(
     vars.select_Nom,
-    vars.infos_Erreur_Nom,
-    vars.couleur_Bordure_Initiale
+    vars.infos_Erreur_Nom
   );
   // Fonction d'appel pour l'entrée EMAIL
-  valid.validateselect_Mail(vars.couleur_Bordure_Initiale);
+  valid.validateselect_Mail();
   // Fonction d'appel pour l'entrée Anniv
-  valid.validateselect_Anniv(vars.couleur_Bordure_Initiale);
+  valid.validateselect_Anniv();
   // Fonction d'appel pour les NUMÉROS d'entrée
-  valid.validateInputQuantity(vars.couleur_Bordure_Initiale);
+  valid.validateInputQuantity();
   // Fonction d'appel pour Input LOCALIZATION CONTEST
   valid.validateLocalise();
   // Fonction d'appel pour l'entrée ACCEPTER LES CONDITIONS
@@ -179,21 +176,19 @@ vars.form.addEventListener("submit", (event) => {
     // Si la fonction pour l'entrée PRENOM renvoie faux
     !valid.validateInputNames(
       vars.select_Prenom,
-      vars.infos_Erreur_Prenom,
-      vars.couleur_Bordure_Initiale
+      vars.infos_Erreur_Prenom
     ) |
     // Si la fonction pour l'entrée LAST NAME retourne faux
     !valid.validateInputNames(
       vars.select_Nom,
-      vars.infos_Erreur_Nom,
-      vars.couleur_Bordure_Initiale
+      vars.infos_Erreur_Nom
     ) |
     // Si la fonction pour Input EMAIL retourne faux
-    !valid.validateselect_Mail(vars.couleur_Bordure_Initiale) |
+    !valid.validateselect_Mail() |
     // Si la fonction pour Input BIRTHDATE retourne faux
-    !valid.validateselect_Anniv(vars.couleur_Bordure_Initiale) |
+    !valid.validateselect_Anniv() |
     // Si la fonction pour l'entrée NUMBERS renvoie faux
-    !valid.validateInputQuantity(vars.couleur_Bordure_Initiale) |
+    !valid.validateInputQuantity() |
     // Si la fonction pour Input LOCALIZATION retourne faux
     !valid.validateLocalise() |
     // Si la fonction pour les CONDITIONS d'entrée renvoie faux

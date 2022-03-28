@@ -19,11 +19,6 @@ function eventInputNames(
   styleBorderElse
 ) {
   inputRefNodelist.addEventListener(eventInput, () => {
-    // Remplacer les caractères spéciaux successifs par un seul caractère spécial
-    inputRefNodelist.value = inputRefNodelist.value.replace(/[\-]{2,}/g, "-");
-    inputRefNodelist.value = inputRefNodelist.value.replace(/[\']{2,}/g, "'");
-    inputRefNodelist.value = inputRefNodelist.value.replace(/[\.]{2,}/g, ".");
-    inputRefNodelist.value = inputRefNodelist.value.replace(/[\-]{2,}/g, "-");
     // Remplacer les espaces blancs successifs par un seul espace blanc et refuser les espaces blancs dans le premier caractère
     inputRefNodelist.value = inputRefNodelist.value.replace(/[\s]{2,}/g, " ");
     inputRefNodelist.value = inputRefNodelist.value.replace(/^[\s]/, "");
@@ -37,8 +32,7 @@ function eventInputNames(
 
 function eventselect_Mail(inputRefNodelist, eventInput, colorBorder) {
   inputRefNodelist.addEventListener(eventInput, () => {
-    inputRefNodelist.value = inputRefNodelist.value.replace(/\s/g, "");
-    inputRefNodelist.value = inputRefNodelist.value.replace(/^[\s]/, "");
+    inputRefNodelist.value = inputRefNodelist.value.trim();
     valid.validateselect_Mail(colorBorder);
   });
 }
@@ -64,8 +58,7 @@ function eventselect_Anniv(
 
 function eventInputQuantity(inputRefNodelist, eventInput, colorBorder) {
   inputRefNodelist.addEventListener(eventInput, () => {
-    inputRefNodelist.value = inputRefNodelist.value.replace(/\s/g, "");
-    inputRefNodelist.value = inputRefNodelist.value.replace(/^[\s]/, "");
+    inputRefNodelist.value = inputRefNodelist.value.trim();
     valid.validateInputQuantity(colorBorder);
   });
 }
