@@ -33,7 +33,7 @@ img {
 /* ------------------------------*/
 
 #ok{
-  font-size:12px;
+  font-size:18px;
   font-style: solid;
   color: green;
 }
@@ -210,7 +210,7 @@ input::placeholder {
 .error-data_quantity, 
 .error-data_location, 
 .error-data_checkbox {
-                          font-size: 0.49em;
+                          font-size: 0.54em;
                           font-weight: 400;
                           color: #e54858;
                           padding: 5px 0px;
