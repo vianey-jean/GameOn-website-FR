@@ -8,22 +8,22 @@ import * as vars from "./variables.js";
 //---------------------------------------------------------------------------
 // FONCTION POUR SAISIR PRENOM/NOM (pour les événements)
 //---------------------------------------------------------------------------
-function validateInputNames(inputRefNodelist, errRefData, colorBorder) {// Validation nom et prenoms
+function validateInputNames(inputRefNodelist, errRefData, colorBorder) {
   if (
     // Conditions pour afficher le message d'erreur + changer la couleur de la police 
     //et la couleur de la bordure lorsque l'entrée n'est pas valide lors de l'envoi
-    (inputRefNodelist.value.length < 2) | //Nombre de caractere est inferieur à 2 ou
-    (inputRefNodelist.value.length > 200) | // Nombre de caractere est superieur à 200 ou
-    !inputRefNodelist.value.match(vars.regexNames)// Diferrent du regexNames
-  ) {// Alors
-    inputRefNodelist.style.border = vars.couleur_Bordure_Erreur;// Couleur du Bordure sera couleur erreur
-    errRefData.style.color = vars.couleur_Font_Erreur;// Le font sera le font erreur
-    errRefData.textContent = vars.msg_Erreur_Nom_Prenom;// Le message sera message erreur
+    (inputRefNodelist.value.length < 2) |
+    (inputRefNodelist.value.length > 200) |
+    !inputRefNodelist.value.match(vars.regexNames)
+  ) {
+    inputRefNodelist.style.border = vars.couleur_Bordure_Erreur;
+    errRefData.style.color = vars.couleur_Font_Erreur;
+    errRefData.textContent = vars.msg_Erreur_Nom_Prenom;
     return false;
-  } else {// Si non
-    inputRefNodelist.style.border = colorBorder;// Le couleur Bordure sera couleur valide
-    errRefData.style.color = vars.couleur_Font_Valide;// Le Font sera font valide
-    errRefData.innerHTML = vars.icon_Valide;// Icon valide
+  } else {
+    errRefData.style.color = vars.couleur_Font_Valide;
+    errRefData.innerHTML = vars.icon_Valide;
+    inputRefNodelist.style.border = colorBorder;
     return true;
   }
 }
