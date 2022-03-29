@@ -4,5 +4,6 @@
 3. Il n'y a aucune dépendance ;
 4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.<br>
 5.  
-6. lien code sur branche dev: ---> https://github.com/vianey-jean/GameOn-website-FR/tree/dev <br>
-lien pages : --> https://vianey-jean.github.io/GameOn-website-FR/ <br>
+
+Lien code sur branche dev: ---> https://github.com/vianey-jean/GameOn-website-FR/tree/dev <br>
+Lien pages : ----> https://vianey-jean.github.io/GameOn-website-FR/ <br>
