@@ -47,12 +47,9 @@ const spanEvents = document.querySelector("#navbar-events");
 // ----------------------------------------------- MESSAGES ERRORS ----------------------------------------------- //
 // ----------------------- Variables pour chaque message d'erreur affiché sur <div error-data> ------------------------ //
 
-let msg_Erreur_Nom_Prenom =
-  "* Entre 2 et 200 caractères, sans chiffre ni caractères spéciaux";
-let msg_Erreur_Mail =
-  "* Veuillez entrer une adresse mail valide (max 100 caractères)";
-let msg_Erreur_Anniv =
-  "* Vous devez avoir au moins 18 ans au moment de l'inscription";
+let msg_Erreur_Nom_Prenom ="* Entre 2 et 200 caractères, sans chiffre ni caractères spéciaux";
+let msg_Erreur_Mail ="* Veuillez entrer une adresse mail valide (max 100 caractères)";
+let msg_Erreur_Anniv ="* Vous devez avoir au moins 18 ans au moment de l'inscription";
 let msg_Erreur_Num = "* Veuillez entrer un nombre entre 0 et 99";
 let msg_Erreur_Localise = "* Veuillez cocher une localisation";
 let msg_Erreur_Conditions = "* Veuillez accepter les conditions d'utilisation";
@@ -60,14 +57,17 @@ let msg_Erreur_Conditions = "* Veuillez accepter les conditions d'utilisation";
 // -------------------------------------------------- STYLE CSS -------------------------------------------------- //
 // --------------------------- Variables pour le style CSS affichées dans <div error-data> ----------------------------- //
 
+let couleur_Font_Erreur = "#ff0000";
+let couleur_Font_Valide = "green";
+let couleur_Bordure_Erreur = "2.8px solid #ff0000";
+let couleur_Bordure_Valide = "2.8px solid green";
 let couleur_Bordure_Initiale = "1px solid #ccc";
-let icon_Valide = '<p  id="val" class="fa fa-check "> Valide</p>';
+let icon_Valide = '<i class="fa fa-check "></i>  Valide ';
 
 // ------------------------------------------------- INNER HTML -------------------------------------------------- //
 // ------------------- Variables pour innerHTML affichées pour le message de remerciement après l'envoi --------------------- //
 
-let msg_Valide =
-  '<p class="txt-thanks">Merci pour votre inscription  <p><button class="btn-close">Fermer</button>';
+let msg_Valide ='<p class="txt-thanks">Merci pour votre inscription  <p><button class="btn-close">Fermer</button>';
 
 // -------------------------------------------------- DATE NOW --------------------------------------------------- //
 // -------------------------- Variables pour collecter la date actuelle (jour, mois et année) ---------------------------- //
@@ -80,9 +80,9 @@ let yearToday = today.getFullYear();
 // ---------------------------------------------------- REGEX ---------------------------------------------------- //
 // -------------------------------- Regex pour les entrées [type=text/email/date/number] ------------------------------- //
 
-const regexNames = /^[a-zA-ZÀ-ú\-\s]*/g;
-const regexEmail = /^([\w/\_\\!#$%&£'\]\[*+=?^`{|}~"()\.,:;<>@-]{1,}[\@][a-zA-Z]{1,}[\.][a-zA-Z]{2,})$/;
-const regexBirthdate = /^(19[0-9][0-9]|2[0-1][0-9][0-9])\-(0[1-9]|1[0-2])\-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+const regexNames =/^[a-zA-ZÀ-ú\-\s]*/g;
+const regexEmail =/^([\w/\_\\!#$%&£'\]\[*+=?^`{|}~"()\.,:;<>@-]{1,}[\@][a-zA-Z]{1,}[\.][a-zA-Z]{2,})$/;
+const regexBirthdate =/^(19[0-9][0-9]|2[0-1][0-9][0-9])\-(0[1-9]|1[0-2])\-(0[1-9]|[1-2][0-9]|3[0-1])$/;
 const regexNumbers = /^([0-9]|[0-9][0-9])$/;
 
 export {
@@ -117,6 +117,10 @@ export {
   msg_Erreur_Num,
   msg_Erreur_Localise,
   msg_Erreur_Conditions,
+  couleur_Font_Valide,
+  couleur_Font_Erreur,
+  couleur_Bordure_Erreur,
+  couleur_Bordure_Valide,
   couleur_Bordure_Initiale,
   icon_Valide,
   msg_Valide,
