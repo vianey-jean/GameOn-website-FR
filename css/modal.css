@@ -9,7 +9,6 @@
   padding: 0;
 }
 
-/*-------------------------------------------------------------------*/
 /* Landing Page */
 body {
   margin: 0;
@@ -33,8 +32,6 @@ img {
 /* ---------------------- HEADER */
 /* ------------------------------*/
 
-
-
 .topnav {
   margin: 3.5%;
   display: flex;
@@ -54,6 +51,7 @@ img {
   color: #000000;
   text-align: center;
   padding: 12px 12px;
+  /* margin: 5px; */
   text-decoration: none;
   font-size: 19px;
   font-family: Roboto, sans-serif;
@@ -167,25 +165,20 @@ label {
   margin-top: 20px;
 }
 input {
-  padding: 0.2px;
-  /*border: 0.8px solid #ccc;*/
+  padding: 8px;
+  border: 0.8px solid #ccc;
   outline: none;
   cursor: pointer;
-  border-color:#000000;
-  border: 1px solid;
 }
 input:focus {
   cursor: text;
   background: #dfe0e1;
-  border-color:  #ff0000;
-  border-style: solid;
 }
 input::placeholder {
   font-family: var(--font-default);
   font-size: 0.8rem;
   font-style: italic;
   color: #333;
- 
 }
 .text-control {
   margin: 0;
@@ -203,13 +196,6 @@ input::placeholder {
   flex-wrap: wrap;
   align-items: center;
 }
-
-#val{
-  font-size:12px;
-  font-style:normal;
-  color: green;
-}
-
 /* Class for data-error messages */
 .error-data_first, 
 .error-data_last, 
@@ -218,15 +204,15 @@ input::placeholder {
 .error-data_quantity, 
 .error-data_location, 
 .error-data_checkbox {
-  font-size: 0.49em;
-  font-weight: 400;
-  color: #e54858;
-  padding: 5px 0px;
-  text-align: left;
-  opacity: 1;
-  line-height: 12px;
-  margin-bottom: 5px;
-  min-height: 22px;
+                          font-size: 0.49em;
+                          font-weight: 400;
+                          color: #e54858;
+                          padding: 5px 0px;
+                          text-align: left;
+                          opacity: 1;
+                          line-height: 12px;
+                          margin-bottom: 5px;
+                          min-height: 22px;
 }
 .checkbox-label,
 .checkbox2-label {
